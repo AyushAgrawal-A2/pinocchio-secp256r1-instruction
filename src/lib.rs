@@ -1,14 +1,12 @@
 #![no_std]
 
-use pinocchio::{
-    program_error::ProgramError, pubkey::Pubkey, sysvars::instructions::IntrospectedInstruction,
-};
+use pinocchio::{error::ProgramError, sysvars::instructions::IntrospectedInstruction, Address};
 
 // Secp256r1SigVerify1111111111111111111111111
-pub const SECP256R1_PROGRAM_ID: Pubkey = [
+pub const SECP256R1_PROGRAM_ID: Address = Address::new_from_array([
     0x06, 0x92, 0x0d, 0xec, 0x2f, 0xea, 0x71, 0xb5, 0xb7, 0x23, 0x81, 0x4d, 0x74, 0x2d, 0xa9, 0x03,
     0x1c, 0x83, 0xe7, 0x5f, 0xdb, 0x79, 0x5d, 0x56, 0x8e, 0x75, 0x47, 0x80, 0x20, 0x00, 0x00, 0x00,
-];
+]);
 pub const SECP256R1_SIGNATURE_LENGTH: usize = 64;
 pub const SECP256R1_COMPRESSED_PUBKEY_LENGTH: usize = 33;
 
